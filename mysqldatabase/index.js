@@ -1,0 +1,15 @@
+const express = require("express")
+const bodyParser = require("body-parser")
+// const User = require("./model/user")
+const router = require("./router/index")
+const app = express()
+app.use(bodyParser.json())
+app.use(router)
+app.get("/", (req, res) => {
+    res.send("this is server")
+})
+//app.post("/add",data.userdata)
+// User.sync({ force: false })
+app.listen(5000, () => {
+    console.log("listening port on 5000")
+})
